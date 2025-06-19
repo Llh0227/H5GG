@@ -34,9 +34,8 @@ jobs:
       - name: Build tweak
         run: |
           export THEOS=$HOME/theos
-          # 关键：在这里指定C++标准库头文件路径，解决unordered_map等头文件找不到问题
           make clean
-          make H5GG_CCFLAGS="-fobjc-arc -fvisibility=hidden -std=c++11 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -stdlib=libc++"
+          make
 
       - name: Upload packages
         uses: actions/upload-artifact@v4
